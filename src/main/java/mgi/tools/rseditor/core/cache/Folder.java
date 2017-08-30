@@ -180,12 +180,12 @@ public class Folder {
     /**
      * Load's packed folder file.
      */
-    public void load(ByteBuffer packedFiles, int[] xtea) {
+    public void load(final ByteBuffer packedFiles, final int[] xtea) {
         if (isLoaded())
             throw new RuntimeException("Already loaded.");
+        this.xtea = xtea;
         unpack(packedFiles);
         this.packedFiles = packedFiles;
-        this.xtea = xtea;
     }
 
 
