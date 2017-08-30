@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+group = 'com.runenova'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.apache.ant', name: 'ant', version: '1.8.2'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
